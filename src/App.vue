@@ -1,12 +1,10 @@
 <script setup>
 import { ref, computed } from "vue"
 
-// estados (variáveis reativas)
 const numero1 = ref(0)
 const numero2 = ref(0)
 const operacao = ref("soma")
 
-// resultado calculado automaticamente
 const resultado = computed(() => {
   switch (operacao.value) {
     case "soma":
@@ -28,13 +26,10 @@ const resultado = computed(() => {
     <h1>🧮 Calculadora com VueJS</h1>
 
     <div class="calculadora">
-      <!-- Campo do primeiro número -->
       <input type="number" v-model.number="numero1" placeholder="Digite o primeiro número" />
 
-      <!-- Campo do segundo número -->
       <input type="number" v-model.number="numero2" placeholder="Digite o segundo número" />
 
-      <!-- Select para escolher operação -->
       <select v-model="operacao">
         <option value="soma">+</option>
         <option value="subtracao">-</option>
@@ -42,7 +37,6 @@ const resultado = computed(() => {
         <option value="divisao">÷</option>
       </select>
 
-      <!-- Resultado -->
       <p class="resultado">Resultado: <strong>{{ resultado }}</strong></p>
     </div>
   </div>
